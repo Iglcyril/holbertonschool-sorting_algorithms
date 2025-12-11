@@ -17,7 +17,7 @@ void selection_sort(int *array, size_t size)
 	{
 		numsmall = array[i];
 		index_min = i;
-		
+
 		for (j = i + 1; j < size; j++)
 		{
 			if (array[j] < numsmall)
@@ -26,16 +26,13 @@ void selection_sort(int *array, size_t size)
 				index_min = j;
 			}
 		}
-			
-		if(i != index_min)
+	
+		if (i != index_min)
 		{
 			temp = array[i];
 			array[i] = array[index_min];
 			array[index_min] = temp;
 			print_array(array, size);
 		}
-			
 	}
-	
 }
-

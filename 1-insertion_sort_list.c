@@ -15,7 +15,7 @@ void insertion_sort_list(listint_t **list)
 		node_j = node_i;
 		while (node_j->prev)
 		{
-			if (node_j->n > node_j->prev->n)
+			if (node_j->n >= node_j->prev->n)
 				break;
 			prev_node = node_j->prev;
 			prev2x_node = prev_node->prev;

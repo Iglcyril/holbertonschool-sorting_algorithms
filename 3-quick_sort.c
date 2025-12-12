@@ -13,9 +13,6 @@ void sorts(int *array, size_t size, int *array_og, size_t *size_og)
 	int temp;
 	size_t i, j;
 
-	if (*size_og < 2)
-		return;
-
 	pivot = array[size - 1];
 	i = 0;
 	j = 0;
@@ -59,6 +56,19 @@ void quick_sort(int *array, size_t size)
 {
 	int *array_og = array;
 	size_t *size_og = &size;
+	size_t i;
+	int temp = 0;
 
-	sorts(array, size, array_og, size_og);
+	if (*size_og < 2)
+		return;
+	for (i = 0; i < size - 1; i++)
+	{
+		if (array[i] != array[i + 1])
+		{
+			sorts(array, size, array_og, size_og);
+			temp = 1;
+		}
+	}
+	if (!temp)
+		print_array(array_og, *size_og);
 }

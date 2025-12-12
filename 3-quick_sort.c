@@ -13,6 +13,9 @@ void sorts(int *array, size_t size, int *array_og, size_t *size_og)
 	int temp;
 	size_t i, j;
 
+	if (*size_og < 2)
+		return;
+
 	pivot = array[size - 1];
 	i = 0;
 	j = 0;
